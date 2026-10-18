@@ -94,12 +94,11 @@ export const IEEE754Tool: React.FC = () => {
   const hexParts = decodeHexToFloat(hexInput);
 
   const presets = [
-    { label: '-12.625 (Class Example)', val: '-12.625' },
-    { label: '0.15625 (Fraction only)', val: '0.15625' },
-    { label: '+42.5', val: '42.5' },
-    { label: '+1.0', val: '1.0' },
-    { label: '-0.75', val: '-0.75' },
-    { label: '0.0 (Zero)', val: '0.0' },
+    { label: '6.5 (Sheet Example → 0x40D00000)', val: '6.5' },
+    { label: '-0.75 (Sheet Example → 0xBF400000)', val: '-0.75' },
+    { label: '-12.625 (Slide Example → 0xC14A0000)', val: '-12.625' },
+    { label: '1.0 (→ 0x3F800000)', val: '1.0' },
+    { label: '0.0 (Zero → 0x00000000)', val: '0.0' },
   ];
 
   return (

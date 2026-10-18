@@ -146,6 +146,28 @@ export const ConverterTool: React.FC = () => {
             </div>
           </div>
 
+          <div className="flex flex-wrap gap-1.5 text-[11px] font-mono">
+            <span className="text-slate-500 font-sans text-xs">Presets:</span>
+            <button
+              onClick={() => { setHornerBase(2); setHornerDigits('1011010'); }}
+              className="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded border border-slate-300 text-slate-800"
+            >
+              1011010b (=90)
+            </button>
+            <button
+              onClick={() => { setHornerBase(16); setHornerDigits('1AB9'); }}
+              className="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded border border-slate-300 text-slate-800"
+            >
+              0x1AB9 (=6841)
+            </button>
+            <button
+              onClick={() => { setHornerBase(2); setHornerDigits('1101'); }}
+              className="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded border border-slate-300 text-slate-800"
+            >
+              1101b (=13)
+            </button>
+          </div>
+
           <div className="bg-slate-50 p-3 rounded border border-slate-200 space-y-2">
             <div className="text-xs font-bold text-slate-800">Evaluation Trace:</div>
             {hornerResult.error ? (
