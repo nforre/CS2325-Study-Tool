@@ -1,0 +1,6 @@
+{
+  "name": "CS2325 Computer Organization Midterm Cheat Sheet & Study Suite",
+  "description": "Comprehensive, print-ready 1-page US Letter exam reference sheet and interactive study tools for CS2325 Computer Organization midterm, covering number representation, IEEE 754, memory organization, endianness, MIPS registers, and MARS assembly.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
