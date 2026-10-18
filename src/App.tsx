@@ -26,6 +26,7 @@ export default function App() {
     studentId: '',
     density: 'dense',
     printMode: 'monochrome',
+    printScale: 100,
     showCustomNotes: false,
     customNotes: 'Prof reminder: Review Horner method steps and little-endian word address order before starting.',
   });
@@ -200,6 +201,29 @@ export default function App() {
                 </div>
               </div>
 
+              {/* Print Scale / Margin Fit */}
+              <div className="flex items-center gap-1.5">
+                <span className="text-slate-500 font-medium">Print Scale:</span>
+                <div className="flex bg-slate-100 p-0.5 rounded border border-slate-200">
+                  <button
+                    onClick={() => setOptions({ ...options, printScale: 100 })}
+                    className={`px-2 py-0.5 rounded text-[11px] font-medium ${
+                      options.printScale === 100 ? 'bg-white shadow-xs font-bold text-slate-900' : 'text-slate-600'
+                    }`}
+                  >
+                    100%
+                  </button>
+                  <button
+                    onClick={() => setOptions({ ...options, printScale: 94 })}
+                    className={`px-2 py-0.5 rounded text-[11px] font-medium ${
+                      options.printScale === 94 ? 'bg-white shadow-xs font-bold text-slate-900' : 'text-slate-600'
+                    }`}
+                  >
+                    94% (Safe Fit)
+                  </button>
+                </div>
+              </div>
+
               {/* Custom Notes Toggle */}
               <button
                 onClick={() => setOptions({ ...options, showCustomNotes: !options.showCustomNotes })}
@@ -277,6 +301,16 @@ export default function App() {
             </div>
 
             {/* The Actual Sheet */}
+            {options.printScale !== 100 && (
+              <style>{`
+                @media print {
+                  .printable-sheet {
+                    transform: scale(${options.printScale / 100}) !important;
+                    transform-origin: top center !important;
+                  }
+                }
+              `}</style>
+            )}
             <PrintableSheet options={options} zoom={zoom} />
           </div>
         )}

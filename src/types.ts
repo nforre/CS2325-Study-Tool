@@ -3,6 +3,7 @@ export interface SheetOptions {
   studentId: string;
   density: 'dense' | 'standard' | 'compact';
   printMode: 'monochrome' | 'subtle';
+  printScale: number; // Percentage, e.g. 100, 95, 90
   showCustomNotes: boolean;
   customNotes: string;
 }
